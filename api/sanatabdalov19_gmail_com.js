@@ -4,11 +4,11 @@ export default function handler(req, res) {
   const isNatural = (n) => /^[1-9]\d*$/.test(n);
 
   if (!isNatural(x) || !isNatural(y)) {
-    return res.status(200).send('NaN');
+    return res.status(200).send("NaN");
   }
 
   const gcd = (a, b) => {
-    while (b !== 0) [a, b] = [b, a % b];
+    while (b) [a, b] = [b, a % b];
     return a;
   };
 
